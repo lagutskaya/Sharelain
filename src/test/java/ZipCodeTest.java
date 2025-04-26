@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
@@ -26,7 +27,7 @@ public class ZipCodeTest {
     public void checkZipCodeEmpty() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
-        browser.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+        browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         browser.get("https://www.sharelane.com/cgi-bin/register.py");
         browser.findElement(By.name("zip_code")).sendKeys("");
         browser.findElement(By.cssSelector("[value=Continue]")).click();
