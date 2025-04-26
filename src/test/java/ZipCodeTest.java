@@ -21,6 +21,7 @@ public class ZipCodeTest {
         Assert.assertEquals(actualErrorMessage, "Oops, error on page. ZIP code should have 5 digits");
         browser.quit();
     }
+
     @Test
     public void checkZipCodeEmpty() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
